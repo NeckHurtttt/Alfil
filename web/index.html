@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Alfil</title>
+<meta name="description" content="Motor de ajedrez en C++ compilado a WebAssembly. Juega contra él en el navegador.">
+<link rel="icon" href="icono.svg">
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+<header>
+  <img src="icono.svg" alt="" width="42" height="42">
+  <div><h1>ALF<span>IL</span></h1><p>Motor de ajedrez en C++ → WebAssembly</p></div>
+</header>
+<main>
+  <div class="zona">
+    <div id="barra" title="Evaluación"><i id="relleno"></i><b id="evtxt">0.0</b></div>
+    <div id="tablero" role="grid" aria-label="Tablero"></div>
+  </div>
+  <aside>
+    <div class="panel">
+      <div id="estado">Tu turno</div>
+      <div class="fila">
+        <label>NIVEL <select id="nivel">
+          <option value="150,2">1 · Novato</option>
+          <option value="300,4">2 · Club</option>
+          <option value="800,10" selected>3 · Fuerte</option>
+          <option value="2000,32">4 · Máquina</option>
+        </select></label>
+        <label>JUEGAS <select id="color"><option value="1">Blancas</option><option value="-1">Negras</option></select></label>
+      </div>
+      <div class="fila">
+        <button id="nuevo">NUEVA</button>
+        <button id="atras">↶ DESHACER</button>
+        <button id="girar">⇅ GIRAR</button>
+        <button id="pista">PISTA</button>
+      </div>
+    </div>
+    <div class="panel">
+      <h2>JUGADAS</h2>
+      <ol id="jugadas"></ol>
+    </div>
+    <div class="panel info">
+      <h2>EL MOTOR PIENSA</h2>
+      <div id="info">profundidad — · nodos — · tiempo —</div>
+    </div>
+  </aside>
+</main>
+<div id="promo" hidden></div>
+<footer>ALFIL · alfa-beta, tabla de transposición, quiescencia, movimiento nulo y LMR · 18 KB de WebAssembly · <a href="https://github.com/NeckHurtttt/Alfil">código</a></footer>
+<script src="app.js"></script>
+</body>
+</html>
